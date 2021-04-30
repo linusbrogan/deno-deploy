@@ -1,7 +1,7 @@
-// Example from https://deno.land/
-import { serve } from "https://deno.land/std@0.95.0/http/server.ts";
-const s = serve({ port: 8000 });
-console.log("http://localhost:8000/");
-for await (const req of s) {
-	req.respond({ body: "Hello World\n" });
-}
+// Hello World example
+addEventListener("fetch", (event) => {
+  const response = new Response("Hello World!", {
+    headers: { "content-type": "text/plain" },
+  });
+  event.respondWith(response);
+});
